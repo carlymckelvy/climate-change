@@ -116,3 +116,38 @@ Plotly.d3.csv("./assets/data/c02.csv", function(err, rows){
 
     Plotly.newPlot('scatter', data, layout);
 });
+
+  function makeChart(players) {
+
+    
+    var playerLabels = players.map(function(d) {
+      return d.year;
+    });
+    var weeksData = players.map(function(d) {
+      return d.mean;
+    });
+  
+    var chart = new Chart('myChart', {
+      type: "line",
+      options: {
+        maintainAspectRatio: false,
+        legend: {
+          display: false
+        }
+      },
+      data: {
+        labels: playerLabels,
+        datasets: [
+          {
+            data: weeksData,
+            backgroundColor: "pink",
+          }
+        ]
+      }
+    });
+  }
+  
+  // Request data using D3
+  d3
+    .csv("./data/co2_annmean_mlo.csv")
+    .then(makeChart);
