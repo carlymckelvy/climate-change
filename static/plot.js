@@ -22,34 +22,41 @@ trace.marker.color = trace.y.map(function (v) {
 var data = [trace];
 
 var layout = {
+    plot_bgcolor: '#181A1B',
+    paper_bgcolor: '#181A1B',
     title: {
         text:'Ocean Temperatures Over Time',
         font: {
           family: 'Arial',
           size: 22,
           align: 'center',
+          color: '#D1CDC7'
         }
       },
       yaxis: {
+        linecolor: '#D1CDC7',
+        zerolinecolor: '#D1CDC7',
+        gridcolor: '#D1CDC7',
+        color: "#D1CDC7",
         title: {
-          text: 'Temperatures in Celsius',
+          text: 'Temperature Change (°C)',
           font: {
             family: 'Arial',
             size: 16,
-            color: '#7f7f7f'
+            color: '#D1CDC7'
           }
         }
       },
+      xaxis: {
+        linecolor: '#D1CDC7',
+        gridcolor: '#D1CDC7',
+        color: "#D1CDC7"
+      },
   dragmode: 'zoom',
   showlegend: false,
-  xaxis: {
-    rangeslider: {
-		 visible: false
-	 }
-  }
 };
 
-Plotly.newPlot('plot', data, layout);
+Plotly.newPlot('bar', data, layout);
 
 });
 
@@ -76,39 +83,71 @@ Plotly.d3.csv("./assets/data/c02.csv", function(err, rows){
 
     var data = [trace];
 
-    // var layout = {
-        // autosize: false,
-        // width: 500,
-        // height: 500,
-        // xaxis: {
-            // title: 'Y-axis Title',
-          //   ticktext: ['long label','Very long label','3','label'],
-        //     tickvals: [1955, 1960, 1965],
-        //     tickmode: 'array',
-        //     automargin: true,
-        //     titlefont: { size:30 },
-        //   },
-        // yaxis: {
-        //   title: 'Y-axis Title',
-        //   ticktext: ['long label','Very long label','3','label'],
-        //   tickvals: [300, 350, 400, 450],
-        //   tickmode: 'array',
-        //   automargin: true,
-        //   titlefont: { size:30 },
-        // }}
-
     var layout = {
-        title: `Carbon in the Atmosphere`,
+        plot_bgcolor: '#181A1B',
+        paper_bgcolor: '#181A1B',
+        title: {
+          text:'Carbon in the Atmosphere',
+          font: {
+            family: 'Arial',
+            size: 22,
+            align: 'center',
+            color: '#D1CDC7'
+          }
+        },
         xaxis: {
             rangeslider: {range: ['1958.2027', '2020.7083']},
             type: "date"
         },
         yaxis: {
+            linecolor: '#D1CDC7',
+            gridcolor: '#D1CDC7',
+            color: "#D1CDC7",
             title: 'Avg C02 in Atmosphere in Parts Per Million (PPM)',
             autorange: true,
             type: "linear"
         },
+        xaxis: {
+          linecolor: '#D1CDC7',
+          gridcolor: '#D1CDC7',
+          color: "#D1CDC7"
+        }
     }
 
     Plotly.newPlot('scatter', data, layout);
 });
+
+  function makeChart(players) {
+
+    
+    var playerLabels = players.map(function(d) {
+      return d.year;
+    });
+    var weeksData = players.map(function(d) {
+      return d.mean;
+    });
+  
+    var chart = new Chart('myChart', {
+      type: "line",
+      options: {
+        maintainAspectRatio: false,
+        legend: {
+          display: false
+        }
+      },
+      data: {
+        labels: playerLabels,
+        datasets: [
+          {
+            data: weeksData,
+            backgroundColor: "pink",
+          }
+        ]
+      }
+    });
+  }
+  
+  // Request data using D3
+  d3
+    .csv("./data/co2_annmean_mlo.csv")
+    .then(makeChart);
