@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "..\\..\\.."
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\awesomeproject2-main"
 		}
 	],
 	"settings": {
