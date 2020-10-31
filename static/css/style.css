@@ -1,3 +1,7 @@
+nav{
+    background-color: #181A1B; 
+    color: #D1CDC7;
+ }
 .jumbotron {
     background-color:#181A1B;
     font-family: Arial, Helvetica, sans-serif;
@@ -6,6 +10,9 @@
 }
 body {background-color:#181A1B;}
 h2 {font-family: Arial, Helvetica, sans-serif;
+    color: #D1CDC7;
+}
+h3 {font-family: Arial, Helvetica, sans-serif;
     color: #D1CDC7;
 }
 p {font-family: Arial, Helvetica, sans-serif;
