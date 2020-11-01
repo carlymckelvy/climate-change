@@ -12,7 +12,7 @@
 
 <body>
   <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg  navbar-custom" style="background-color: #181A1B;">
       <a class="navbar-brand" href="/Group-Project-2/static/index.html">Home</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -50,9 +50,18 @@
       </nav>
     <div class="jumbotron text-center">
       <h1>Evolution of Storms over Time</h1>
-    </div>
+    </div
 
-    <h2>Super Chart</h2>
+<figure class="highcharts-figure">
+  <div id="container"></div>
+  <p class="highcharts-description">
+    Basic line chart showing trends in a dataset. This chart includes the
+    <code>series-label</code> module, which adds a label to each line for
+    enhanced readability.
+  </p>
+</figure>
+
+    <h2>Ocean Temps</h2>
     <div id="bar"></div>
     <p>Just make little strokes like that. A happy cloud. Think about a cloud. Just float around and be there. Fluff that up. Don't be bashful drop me a line.</p>
 
@@ -63,7 +72,7 @@
       Oceanic and Atmospheric Administration [Keeling, 1976]. NOAA started its own CO2 measurements in May of 1974, and they have run in parallel with those made by Scripps 
       since then [Thoning, 1989]. https://www.esrl.noaa.gov/gmd/ccgg/trends/</p>
     
-    <h2>Hurricane Landfall</h2>
+    <h2>Carbon Percent Change</h2>
     <div class="chart-container" style="position: relative; height:40vh; width:97vw">   
     <canvas id="myChart"></canvas>
     </div> 
@@ -78,7 +87,10 @@
 
     <div class="row">
       <div class="col-md-12">
-        <p>citations</p>
+        <p>Citations:</p>
+        <p>
+          photo credit: https://www.nasa.gov/multimedia/imagegallery/image_feature_87.html
+        </p>
         <p>
           We don't make mistakes we just have happy little accidents. Don't be bashful drop me a line. Just let this happen. We just let this flow right out of our minds. Let's put some happy trees and bushes back in here. Brown is such a nice color.
 
@@ -97,7 +109,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.7/d3.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/series-label.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
   <script type="text/javascript" src="plot.js"></script>
+  <script src="motion.js"></script>
 </body>
 
 </html>

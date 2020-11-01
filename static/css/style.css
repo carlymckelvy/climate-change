@@ -1,11 +1,24 @@
-nav{
-    background-color: #181A1B; 
-    color: #D1CDC7;
- }
+
+.navbar-custom .navbar-brand, 
+.navbar-custom .navbar-text {
+    color: #D1CDC7; 
+} 
+
+ .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(209, 205, 199, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+  
+  .custom-toggler.navbar-toggler {
+    border-color: rgb(209,205,205);
+  } 
 .jumbotron {
     background-color:#181A1B;
     font-family: Arial, Helvetica, sans-serif;
-    color: #D1CDC7;
+    color: #181A1B;
+    background: url(/Group-Project-2/static/hurricaneIsabel.jpg) fixed center no-repeat;
+    background-size: cover;
+    padding-top: 15%;
+    padding-bottom: 15%;
 }
 
 .jumbotron-image {
@@ -25,3 +38,6 @@ p {font-family: Arial, Helvetica, sans-serif;
     color: #D1CDC7;
 }
 
+a {
+    color: #D1CDC7;  
+}
