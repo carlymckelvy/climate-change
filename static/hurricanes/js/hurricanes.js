@@ -6,45 +6,176 @@ d3.csv("../data/maxWind.csv", d3.autoType).then((data) => {
 
     //     var defaultID = status[0];
     //         console.log(defaultID);
-    var stormTS = [];
-    var stormTD = [];
-    var stormC1 = [];
-    var stormC2 = [];
-    var stormC3 = [];
-    var stormC4 = [];
-    var stormC5 = [];
 
-        var x_axis = data.map(row => {
-            
-            if (row.Year < 1860) {
-                if (row.Status === ' TS') {
-                    stormTS.push(row.ID)
-                } else if (row.Status === ' TD') {
-                    stormTD.push(row.ID)
-                } else if (row.Status === ' HU' && row["Maximum Wind"] < 96) {
-                    stormC1.push(row.ID)
-                } else if (row.Status === ' HU' && row["Maximum Wind"] < 111) {
-                    stormC2.push(row.ID)
-                }else if (row.Status === ' HU' && row["Maximum Wind"] < 131) {
-                    stormC3.push(row.ID)
-                }else if (row.Status === ' HU' && row["Maximum Wind"] < 156) {
-                    stormC4.push(row.ID)
-                }else if (row.Status === ' HU' && row["Maximum Wind"] >= 156) {
-                    stormC5.push(row.ID)
-                }
+    // Create empty arrays to hold the storms that match its respective criteria
+    var stormTS1850 = [];
+    var stormTD1850 = [];
+    var stormC11850 = [];
+    var stormC21850 = [];
+    var stormC31850 = [];
+    var stormC41850 = [];
+    var stormC51850 = [];
+
+    var stormTS1860 = [];
+    var stormTD1860 = [];
+    var stormC11860 = [];
+    var stormC21860 = [];
+    var stormC31860 = [];
+    var stormC41860 = [];
+    var stormC51860 = [];
+
+    var stormTS1870 = [];
+    var stormTD1870 = [];
+    var stormC11870 = [];
+    var stormC21870 = [];
+    var stormC31870 = [];
+    var stormC41870 = [];
+    var stormC51870 = [];
+
+    var stormTS1880 = [];
+    var stormTD1880 = [];
+    var stormC11880 = [];
+    var stormC21880 = [];
+    var stormC31880 = [];
+    var stormC41880 = [];
+    var stormC51880 = [];
+
+    var stormTS1890 = [];
+    var stormTD1890 = [];
+    var stormC11890 = [];
+    var stormC21890 = [];
+    var stormC31890 = [];
+    var stormC41890 = [];
+    var stormC51890 = [];
+
+    var stormTS1900 = [];
+    var stormTD1900 = [];
+    var stormC11900 = [];
+    var stormC21900 = [];
+    var stormC31900 = [];
+    var stormC41900 = [];
+    var stormC51900 = [];
+
+    var stormTS1910 = [];
+    var stormTD1910 = [];
+    var stormC11910 = [];
+    var stormC21910 = [];
+    var stormC31910 = [];
+    var stormC41910 = [];
+    var stormC51910 = [];
+
+    var stormTS1920 = [];
+    var stormTD1920 = [];
+    var stormC11920 = [];
+    var stormC21920 = [];
+    var stormC31920 = [];
+    var stormC41920= [];
+    var stormC51920 = [];
+
+    var stormTS1930 = [];
+    var stormTD1930 = [];
+    var stormC11930 = [];
+    var stormC21930 = [];
+    var stormC31930 = [];
+    var stormC41930 = [];
+    var stormC51930 = [];
+
+    var stormTS1940 = [];
+    var stormTD1940 = [];
+    var stormC11940 = [];
+    var stormC21940 = [];
+    var stormC31940 = [];
+    var stormC41940 = [];
+    var stormC51940 = [];
+
+    var stormTS1950 = [];
+    var stormTD1950 = [];
+    var stormC11950 = [];
+    var stormC21950 = [];
+    var stormC31950 = [];
+    var stormC41950 = [];
+    var stormC51950 = [];
+
+    var stormTS1960 = [];
+    var stormTD1960 = [];
+    var stormC11960 = [];
+    var stormC21960 = [];
+    var stormC31960 = [];
+    var stormC41960 = [];
+    var stormC51960 = [];
+
+    var stormTS1970 = [];
+    var stormTD1970 = [];
+    var stormC11970 = [];
+    var stormC21970 = [];
+    var stormC31970 = [];
+    var stormC41970 = [];
+    var stormC51970 = [];
+
+    var stormTS1980 = [];
+    var stormTD1980 = [];
+    var stormC11980 = [];
+    var stormC21980 = [];
+    var stormC31980 = [];
+    var stormC41980 = [];
+    var stormC51980 = [];
+
+    var stormTS1990 = [];
+    var stormTD1990 = [];
+    var stormC11990 = [];
+    var stormC21990 = [];
+    var stormC31990 = [];
+    var stormC41990 = [];
+    var stormC51990 = [];
+
+    var stormTS2000 = [];
+    var stormTD2000 = [];
+    var stormC12000 = [];
+    var stormC22000 = [];
+    var stormC32000 = [];
+    var stormC42000 = [];
+    var stormC52000 = [];
+
+    var stormTS2010 = [];
+    var stormTD2010 = [];
+    var stormC12010 = [];
+    var stormC22010 = [];
+    var stormC32010 = [];
+    var stormC42010 = [];
+    var stormC52010 = [];
+
+    // Loop through each row to determine which array that storm should be added to
+    var x_axis = data.map(row => {
+        
+        if (row.Year < 1860) {
+            if (row.Status === ' TS') {
+                stormTS1850.push(row.ID)
+            } else if (row.Status === ' TD') {
+                stormTD1850.push(row.ID)
+            } else if (row.Status === ' HU' && row["Maximum Wind"] < 96) {
+                stormC11850.push(row.ID)
+            } else if (row.Status === ' HU' && row["Maximum Wind"] < 111) {
+                stormC21850.push(row.ID)
+            }else if (row.Status === ' HU' && row["Maximum Wind"] < 131) {
+                stormC31850.push(row.ID)
+            }else if (row.Status === ' HU' && row["Maximum Wind"] < 156) {
+                stormC41850.push(row.ID)
+            }else if (row.Status === ' HU' && row["Maximum Wind"] >= 156) {
+                stormC51850.push(row.ID)
             }
-            else if (row.Status === ' TD')
-                stormTD.push(row.ID)
+        }
+        // else if (row.Status === ' TD')
+        //     stormTD.push(row.ID)
             
         });
-        console.log(stormTS);
-        console.log(stormTD);
-        console.log(stormC1);
-        console.log(stormC2);
-        console.log(stormC3);
-        console.log(stormC4);
-        console.log(stormC5);
-        console.log(stormTS.length);
+        console.log(stormTS1850);
+        console.log(stormTD1850);
+        console.log(stormC11850);
+        console.log(stormC21850);
+        console.log(stormC31850);
+        console.log(stormC41850);
+        console.log(stormC51850);
+       // console.log(stormTS.length);
 
 
         // var corrs = [];
@@ -130,7 +261,7 @@ d3.csv("../data/maxWind.csv", d3.autoType).then((data) => {
             name: 'Tropical Depression',
             data: [
                 {
-                    sequence: [1]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormTD1850.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
                 }, {
                     sequence: [5]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
                 }, {
@@ -157,7 +288,7 @@ d3.csv("../data/maxWind.csv", d3.autoType).then((data) => {
             name: 'Tropical Storm',
             data: [
                 {
-                    sequence: [stormTS.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormTS1850.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
                 }, {
                     sequence: [2]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
                 }, {
@@ -184,7 +315,7 @@ d3.csv("../data/maxWind.csv", d3.autoType).then((data) => {
             name: 'Category 1 Hurricane',
             data: [
                 {
-                    sequence: [stormC1.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC11850.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
                 }, {
                     sequence: [5]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
                 }, {
@@ -211,7 +342,7 @@ d3.csv("../data/maxWind.csv", d3.autoType).then((data) => {
             name: 'Category 2 Hurricane',
             data: [
                 {
-                    sequence: [stormC2.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC21850.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
                 }, {
                     sequence: [5]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
                 }, {
@@ -239,7 +370,7 @@ d3.csv("../data/maxWind.csv", d3.autoType).then((data) => {
             name: 'Category 3 Hurricane',
             data: [
                 {
-                    sequence: [stormC3.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC31850.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
                 }, {
                     sequence: [2]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
                 }, {
@@ -267,7 +398,7 @@ d3.csv("../data/maxWind.csv", d3.autoType).then((data) => {
             name: 'Category 4 Hurricane',
             data: [
                 {
-                    sequence: [stormC4.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC41850.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
                 }, {
                     sequence: [2]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
                 }, {
@@ -295,7 +426,7 @@ d3.csv("../data/maxWind.csv", d3.autoType).then((data) => {
             name: 'Category 5 Hurricane',
             data: [
                 {
-                    sequence: [stormC5.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC51850.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
                 }, {
                     sequence: [2]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
                 }, {
