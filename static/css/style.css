@@ -15,7 +15,7 @@
     background-color:#181A1B;
     font-family: Arial, Helvetica, sans-serif;
     color: #181A1B;
-    background: url(/Group-Project-2/static/hurricaneIsabel.jpg) fixed center no-repeat;
+    background: url(../images/hurricaneIsabel.jpg) fixed center no-repeat;
     background-size: cover;
     padding-top: 15%;
     padding-bottom: 15%;
