@@ -5,7 +5,7 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 from flask_cors import CORS
 
 #################################################
@@ -40,7 +40,7 @@ CORS(app)
 # Flask Routes
 #################################################
 
-@app.route("/")
+@app.route("/api")
 def welcome():
     """List all available api routes."""
     return (
@@ -55,8 +55,9 @@ def welcome():
 
 
 # Landing page
-# @app.route("/")
-#     return render_template("index.html")
+@app.route("/")
+def homepage():
+    return render_template("index.html")
 
 
 # Hurricane page
@@ -161,7 +162,7 @@ def maxwind():
     return jsonify(all_maxwind)
 
 
-# # Oceans page
+# Oceans page
 # @app.route("/oceans")
 #     return render_template("oceans.html")
 
