@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-unction createMap(landfall) {
-=======
 function createMap(landfall) {
->>>>>>> main
 
     var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
         attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
@@ -81,9 +77,12 @@ locs.forEach(loc => {
     fillOpacity: 0.7,
 } )
     .bindPopup("<h3>Storm Name: " + loc.name +
-    "</h3><hr><p>Date: " + loc.date + "</p><p>Max Wind Speed: " + loc.maxwind + 
+    "</h3><hr><p>Date: " + (((loc.date).slice(4,6)) + "/" + ((loc.date).slice(6,8)) + "/" + ((loc.date).slice(0,4))) + "</p><p>Max Wind Speed: " + loc.maxwind + "mph" +
         "</p><p>Time: " + loc.time + "</p><p>Status: " + loc.status + "</p>");
 
+    
+    // console.log(((loc.date).slice(4,6)) + "/" + ((loc.date).slice(6,8)) + "/" + ((loc.date).slice(0,4)))
+        
     // Add the coordinates to the array
     coords.push(coord);
 })
