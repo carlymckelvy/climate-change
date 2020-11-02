@@ -1,4 +1,4 @@
-d3.csv("../data/maxWind.csv", d3.autoType).then((data) => {
+d3.csv("../static/data/maxWind.csv", d3.autoType).then((data) => {
 //d3.json("/api/v1.0/maxwind", d3.autoType).then((data) => {
     console.log(data);
 //});
@@ -438,8 +438,8 @@ d3.csv("../data/maxWind.csv", d3.autoType).then((data) => {
             layout: 'vertical',
             align: 'left',
             verticalAlign: 'top',
-            x: 100,
-            y: 30,
+            x: 80,
+            y: 10,
             floating: true,
             borderWidth: 1,
             backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
@@ -567,7 +567,7 @@ d3.csv("../data/maxWind.csv", d3.autoType).then((data) => {
                 }
             ]
         }, {
-            name: 'Category 1 Hurricane',
+            name: 'Category 1 Hurricane (Winds 75-95 mph)',
             data: [
                 {
                     sequence: [stormC11850.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
@@ -606,7 +606,7 @@ d3.csv("../data/maxWind.csv", d3.autoType).then((data) => {
                 }
             ]
         }, {
-            name: 'Category 2 Hurricane',
+            name: 'Category 2 Hurricane (Winds 96-110 mph)',
             data: [
                 {
                     sequence: [stormC21850.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
@@ -646,7 +646,7 @@ d3.csv("../data/maxWind.csv", d3.autoType).then((data) => {
             ]
         },
         {
-            name: 'Category 3 Hurricane',
+            name: 'Category 3 Hurricane (Winds 111-130 mph)',
             data: [
                 {
                     sequence: [stormC31850.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
@@ -686,7 +686,7 @@ d3.csv("../data/maxWind.csv", d3.autoType).then((data) => {
             ]
         },
         {
-            name: 'Category 4 Hurricane',
+            name: 'Category 4 Hurricane (Winds 131-155 mph)',
             data: [
                 {
                     sequence: [stormC41850.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
@@ -726,7 +726,7 @@ d3.csv("../data/maxWind.csv", d3.autoType).then((data) => {
             ]
         },
         {
-            name: 'Category 5 Hurricane',
+            name: 'Category 5 Hurricane (Winds 156+ mph)',
             data: [
                 {
                     sequence: [stormC51850.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
