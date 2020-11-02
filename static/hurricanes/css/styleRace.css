@@ -2,8 +2,9 @@
 #windrace {
     height: 400px;
     min-width: 310px;
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
+    background-color: black ;
 }
 .loading {
     margin-top: 10em;
@@ -16,7 +17,7 @@
     padding: 5px 0 1em 0;
 }
 #play-controls * {
-    display: inline-block;
+    display: inline-block; 
     vertical-align: middle;
 }
 #play-pause-button {
