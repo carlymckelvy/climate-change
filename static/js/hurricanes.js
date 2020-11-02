@@ -1,5 +1,5 @@
-d3.csv("../static/data/maxWind.csv", d3.autoType).then((data) => {
-//d3.json("/api/v1.0/maxwind", d3.autoType).then((data) => {
+//d3.csv("../static/data/maxWind.csv", d3.autoType).then((data) => {
+d3.json("/api/v1.0/maxwind", d3.autoType).then((data) => {
     console.log(data);
 //});
 
