@@ -45,9 +45,9 @@ a {
 /* For HighCharts Areaspline on the hurricanes.html page */
 @import "http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css";
 #windrace {
-    height: 400px;
+    height: 600px;
     min-width: 310px;
-    max-width: 1200px;
+    max-width: 1800px;
     margin: 0 auto;
     background-color: black ;
 }
