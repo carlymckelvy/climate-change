@@ -17,8 +17,9 @@
     color: #181A1B;
     background: url(../images/hurricaneIsabel.jpg) fixed center no-repeat;
     background-size: cover;
-    padding-top: 15%;
-    padding-bottom: 15%;
+    /* padding-top: 15%;
+    padding-bottom: 15%; */
+    height: 20px
 }
 
 .jumbotron-image {
@@ -88,8 +89,8 @@ body {
     margin-top: 2px;
 }
 
-.leaflet-popup-content, h3, p {
-    color:  black;
+.leaflet-popup-content {
+        color:  black;
     
 
   }

@@ -69,11 +69,9 @@ locs.forEach(loc => {
     // For each landfall, create a marker and bind a popup with info
     var coord = L.circle([loc.latitude, loc.longitude],{
     radius: loc.maxwind*300,
-    //   opacity: .9,
     color: "white",
     fillColor: getColor(loc.year),
     stroke: false,
-    //   weight: 2,
     fillOpacity: 0.7,
 } )
     .bindPopup("<h3>Storm Name: " + loc.name +
