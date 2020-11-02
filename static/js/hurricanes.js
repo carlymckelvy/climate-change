@@ -492,78 +492,78 @@ d3.json("/api/v1.0/maxwind", d3.autoType).then((data) => {
             name: 'Tropical Depression',
             data: [
                 {
-                    sequence: [stormTD1850.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormTD1850.length]
                 }, {
-                    sequence: [stormTD1860.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormTD1860.length]
                 }, {
-                    sequence: [stormTD1870.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTD1870.length]
                 }, {
-                    sequence: [stormTD1880.length1]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormTD1880.length1]
                 }, {
-                    sequence: [stormTD1890.length1]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormTD1890.length1]
                 }, {
-                    sequence: [stormTD1900.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormTD1900.length]
                 }, {
-                    sequence: [stormTD1910.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTD1910.length]
                 }, {
-                    sequence: [stormTD1920.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormTD1920.length]
                 }, {
-                    sequence: [stormTD1930.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTD1930.length]
                 }, {
-                    sequence: [stormTD1940.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormTD1940.length]
                 }, {
-                    sequence: [stormTD1950.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTD1950.length]
                 }, {
-                    sequence: [stormTD1960.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTD1960.length]
                 }, {
-                    sequence: [stormTD1970.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTD1970.length]
                 }, {
-                    sequence: [stormTD1980.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTD1980.length]
                 }, {
-                    sequence: [stormTD1990.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTD1990.length]
                 }, {
-                    sequence: [stormTD2000.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTD2000.length]
                 }, {
-                    sequence: [stormTD2010.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTD2010.length]
                 }
             ]
         }, {
             name: 'Tropical Storm',
             data: [
                 {
-                    sequence: [stormTS1850.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormTS1850.length]
                 }, {
-                    sequence: [stormTS1860.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormTS1860.length]
                 }, {
-                    sequence: [stormTS1870.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTS1870.length]
                 }, {
-                    sequence: [stormTS1880.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormTS1880.length]
                 }, {
-                    sequence: [stormTS1890.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormTS1890.length]
                 }, {
-                    sequence: [stormTS1900.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormTS1900.length]
                 }, {
-                    sequence: [stormTS1910.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTS1910.length]
                 }, {
-                    sequence: [stormTS1920.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormTS1920.length]
                 }, {
-                    sequence: [stormTS1930.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTS1930.length]
                 }, {
-                    sequence: [stormTS1940.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormTS1940.length]
                 }, {
-                    sequence: [stormTS1950.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTS1950.length]
                 }, {
-                    sequence: [stormTS1960.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTS1960.length]
                 }, {
-                    sequence: [stormTS1970.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTS1970.length]
                 }, {
-                    sequence: [stormTS1980.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTS1980.length]
                 }, {
-                    sequence: [stormTS1990.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTS1990.length]
                 }, {
-                    sequence: [stormTS2000.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTS2000.length]
                 }, {
-                    sequence: [stormTS2010.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTS2010.length]
                 }
             ]
         }, {
