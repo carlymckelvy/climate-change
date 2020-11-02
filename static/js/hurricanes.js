@@ -1,6 +1,17 @@
 //d3.csv("../static/data/maxWind.csv", d3.autoType).then((data) => {
-d3.json("/api/v1.0/maxwind", d3.autoType).then((data) => {
-    console.log(data);
+//d3.json("/api/v1.0/maxwind").then((data) => {
+d3.json("/api/v1.0/maxwind").then(function(dataHurr) {
+    dataHurr.forEach(data => {
+        data.year = +data.year;
+        data.maxwind = +data.maxwind;
+    });
+    console.log(dataHurr);
+
+// (data) => {
+//     console.log(data);
+//     data.maxwind = +data.maxwind;
+//     console.log(data);
+ 
 //});
 
     // Create empty arrays to hold the storms that match its respective criteria
@@ -65,7 +76,7 @@ d3.json("/api/v1.0/maxwind", d3.autoType).then((data) => {
     var stormC11920 = [];
     var stormC21920 = [];
     var stormC31920 = [];
-    var stormC41920= [];
+    var stormC41920 = [];
     var stormC51920 = [];
 
     var stormTS1930 = [];
@@ -141,285 +152,287 @@ d3.json("/api/v1.0/maxwind", d3.autoType).then((data) => {
     var stormC52010 = [];
 
     // Loop through each row to determine which array that storm should be added to
-    var x_axis = data.map(row => {
+    //var x_axis = data.map(row => {
+    var x_axis = dataHurr.map(row => {
 
-        if (row.Year < 1860) {
-            if (row.Status === ' TS') {
-                stormTS1850.push(row.ID)
-            } else if (row.Status === ' TD') {
-                stormTD1850.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 96) {
-                stormC11850.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 111) {
-                stormC21850.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 131) {
-                stormC31850.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 156) {
-                stormC41850.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] >= 156) {
-                stormC51850.push(row.ID)
+        if (row.year < 1860) {           
+            if (row.status === ' TS') {
+                stormTS1850.push(row.stormid)
+            } else if (row.status === ' TD') {
+                stormTD1850.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 96) {
+                stormC11850.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 111) {
+                stormC21850.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 131) {
+                stormC31850.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 156) {
+                stormC41850.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind >= 156) {
+                stormC51850.push(row.stormid)
             }
-        } else if (row.Year < 1870) {
-            if (row.Status === ' TS') {
-                stormTS1860.push(row.ID)
-            } else if (row.Status === ' TD') {
-                stormTD1860.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 96) {
-                stormC11860.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 111) {
-                stormC21860.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 131) {
-                stormC31860.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 156) {
-                stormC41860.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] >= 156) {
-                stormC51860.push(row.ID)
+
+        } else if (row.year < 1870) {
+            if (row.status === ' TS') {
+                stormTS1860.push(row.stormid)
+            } else if (row.status === ' TD') {
+                stormTD1860.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 96) {
+                stormC11860.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 111) {
+                stormC21860.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 131) {
+                stormC31860.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 156) {
+                stormC41860.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind >= 156) {
+                stormC51860.push(row.stormid)
             }
-        } else if (row.Year < 1880) {
-            if (row.Status === ' TS') {
-                stormTS1870.push(row.ID)
-            } else if (row.Status === ' TD') {
-                stormTD1870.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 96) {
-                stormC11870.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 111) {
-                stormC21870.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 131) {
-                stormC31870.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 156) {
-                stormC41870.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] >= 156) {
-                stormC51870.push(row.ID)
+        } else if (row.year < 1880) {
+            if (row.status === ' TS') {
+                stormTS1870.push(row.stormid)
+            } else if (row.status === ' TD') {
+                stormTD1870.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 96) {
+                stormC11870.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 111) {
+                stormC21870.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 131) {
+                stormC31870.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 156) {
+                stormC41870.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind >= 156) {
+                stormC51870.push(row.stormid)
             }
-        } else if (row.Year < 1890) {
-            if (row.Status === ' TS') {
-                stormTS1880.push(row.ID)
-            } else if (row.Status === ' TD') {
-                stormTD1880.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 96) {
-                stormC11880.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 111) {
-                stormC21880.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 131) {
-                stormC31880.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 156) {
-                stormC41880.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] >= 156) {
-                stormC51880.push(row.ID)
+        } else if (row.year < 1890) {
+            if (row.status === ' TS') {
+                stormTS1880.push(row.stormid)
+            } else if (row.status === ' TD') {
+                stormTD1880.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 96) {
+                stormC11880.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 111) {
+                stormC21880.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 131) {
+                stormC31880.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 156) {
+                stormC41880.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind >= 156) {
+                stormC51880.push(row.stormid)
             }
-        } else if (row.Year < 1900) {
-            if (row.Status === ' TS') {
-                stormTS1890.push(row.ID)
-            } else if (row.Status === ' TD') {
-                stormTD1890.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 96) {
-                stormC11890.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 111) {
-                stormC21890.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 131) {
-                stormC31890.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 156) {
-                stormC41890.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] >= 156) {
-                stormC51890.push(row.ID)
+        } else if (row.year < 1900) {
+            if (row.status === ' TS') {
+                stormTS1890.push(row.stormid)
+            } else if (row.status === ' TD') {
+                stormTD1890.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 96) {
+                stormC11890.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 111) {
+                stormC21890.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 131) {
+                stormC31890.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 156) {
+                stormC41890.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind >= 156) {
+                stormC51890.push(row.stormid)
             }
-        } else if (row.Year < 1910) {
-            if (row.Status === ' TS') {
-                stormTS1900.push(row.ID)
-            } else if (row.Status === ' TD') {
-                stormTD1900.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 96) {
-                stormC11900.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 111) {
-                stormC21900.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 131) {
-                stormC31900.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 156) {
-                stormC41900.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] >= 156) {
-                stormC51900.push(row.ID)
+        } else if (row.year < 1910) {
+            if (row.status === ' TS') {
+                stormTS1900.push(row.stormid)
+            } else if (row.status === ' TD') {
+                stormTD1900.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 96) {
+                stormC11900.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 111) {
+                stormC21900.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 131) {
+                stormC31900.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 156) {
+                stormC41900.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind >= 156) {
+                stormC51900.push(row.stormid)
             }
-        } else if (row.Year < 1920) {
-            if (row.Status === ' TS') {
-                stormTS1910.push(row.ID)
-            } else if (row.Status === ' TD') {
-                stormTD1910.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 96) {
-                stormC11910.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 111) {
-                stormC21910.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 131) {
-                stormC31910.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 156) {
-                stormC41910.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] >= 156) {
-                stormC51910.push(row.ID)
+        } else if (row.year < 1920) {
+            if (row.status === ' TS') {
+                stormTS1910.push(row.stormid)
+            } else if (row.status === ' TD') {
+                stormTD1910.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 96) {
+                stormC11910.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 111) {
+                stormC21910.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 131) {
+                stormC31910.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 156) {
+                stormC41910.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind >= 156) {
+                stormC51910.push(row.stormid)
             }
-        } else if (row.Year < 1930) {
-            if (row.Status === ' TS') {
-                stormTS1920.push(row.ID)
-            } else if (row.Status === ' TD') {
-                stormTD1920.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 96) {
-                stormC11920.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 111) {
-                stormC21920.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 131) {
-                stormC31920.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 156) {
-                stormC41920.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] >= 156) {
-                stormC51920.push(row.ID)
+        } else if (row.year < 1930) {
+            if (row.status === ' TS') {
+                stormTS1920.push(row.stormid)
+            } else if (row.status === ' TD') {
+                stormTD1920.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 96) {
+                stormC11920.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 111) {
+                stormC21920.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 131) {
+                stormC31920.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 156) {
+                stormC41920.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind >= 156) {
+                stormC51920.push(row.stormid)
             }
-        } else if (row.Year < 1940) {
-            if (row.Status === ' TS') {
-                stormTS1930.push(row.ID)
-            } else if (row.Status === ' TD') {
-                stormTD1930.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 96) {
-                stormC11930.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 111) {
-                stormC21930.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 131) {
-                stormC31930.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 156) {
-                stormC41930.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] >= 156) {
-                stormC51930.push(row.ID)
+        } else if (row.year < 1940) {
+            if (row.status === ' TS') {
+                stormTS1930.push(row.stormid)
+            } else if (row.status === ' TD') {
+                stormTD1930.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 96) {
+                stormC11930.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 111) {
+                stormC21930.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 131) {
+                stormC31930.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 156) {
+                stormC41930.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind >= 156) {
+                stormC51930.push(row.stormid)
             }
-        } else if (row.Year < 1950) {
-            if (row.Status === ' TS') {
-                stormTS1940.push(row.ID)
-            } else if (row.Status === ' TD') {
-                stormTD1940.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 96) {
-                stormC11940.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 111) {
-                stormC21940.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 131) {
-                stormC31940.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 156) {
-                stormC41940.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] >= 156) {
-                stormC51940.push(row.ID)
+        } else if (row.year < 1950) {
+            if (row.status === ' TS') {
+                stormTS1940.push(row.stormid)
+            } else if (row.status === ' TD') {
+                stormTD1940.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 96) {
+                stormC11940.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 111) {
+                stormC21940.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 131) {
+                stormC31940.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 156) {
+                stormC41940.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind >= 156) {
+                stormC51940.push(row.stormid)
             }
-        } else if (row.Year < 1960) {
-            if (row.Status === ' TS') {
-                stormTS1950.push(row.ID)
-            } else if (row.Status === ' TD') {
-                stormTD1950.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 96) {
-                stormC11950.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 111) {
-                stormC21950.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 131) {
-                stormC31950.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 156) {
-                stormC41950.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] >= 156) {
-                stormC51950.push(row.ID)
+        } else if (row.year < 1960) {
+            if (row.status === ' TS') {
+                stormTS1950.push(row.stormid)
+            } else if (row.status === ' TD') {
+                stormTD1950.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 96) {
+                stormC11950.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 111) {
+                stormC21950.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 131) {
+                stormC31950.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 156) {
+                stormC41950.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind >= 156) {
+                stormC51950.push(row.stormid)
             }
-        } else if (row.Year < 1970) {
-            if (row.Status === ' TS') {
-                stormTS1960.push(row.ID)
-            } else if (row.Status === ' TD') {
-                stormTD1960.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 96) {
-                stormC11960.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 111) {
-                stormC21960.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 131) {
-                stormC31960.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 156) {
-                stormC41960.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] >= 156) {
-                stormC51960.push(row.ID)
+        } else if (row.year < 1970) {
+            if (row.status === ' TS') {
+                stormTS1960.push(row.stormid)
+            } else if (row.status === ' TD') {
+                stormTD1960.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 96) {
+                stormC11960.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 111) {
+                stormC21960.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 131) {
+                stormC31960.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 156) {
+                stormC41960.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind >= 156) {
+                stormC51960.push(row.stormid)
             }
-        } else if (row.Year < 1980) {
-            if (row.Status === ' TS') {
-                stormTS1970.push(row.ID)
-            } else if (row.Status === ' TD') {
-                stormTD1970.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 96) {
-                stormC11970.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 111) {
-                stormC21970.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 131) {
-                stormC31970.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 156) {
-                stormC41970.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] >= 156) {
-                stormC51970.push(row.ID)
+        } else if (row.year < 1980) {
+            if (row.status === ' TS') {
+                stormTS1970.push(row.stormid)
+            } else if (row.status === ' TD') {
+                stormTD1970.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 96) {
+                stormC11970.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 111) {
+                stormC21970.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 131) {
+                stormC31970.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 156) {
+                stormC41970.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind >= 156) {
+                stormC51970.push(row.stormid)
             }
-        } else if (row.Year < 1990) {
-            if (row.Status === ' TS') {
-                stormTS1980.push(row.ID)
-            } else if (row.Status === ' TD') {
-                stormTD1980.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 96) {
-                stormC11980.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 111) {
-                stormC21980.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 131) {
-                stormC31980.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 156) {
-                stormC41980.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] >= 156) {
-                stormC51980.push(row.ID)
+        } else if (row.year < 1990) {
+            if (row.status === ' TS') {
+                stormTS1980.push(row.stormid)
+            } else if (row.status === ' TD') {
+                stormTD1980.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 96) {
+                stormC11980.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 111) {
+                stormC21980.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 131) {
+                stormC31980.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 156) {
+                stormC41980.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind >= 156) {
+                stormC51980.push(row.stormid)
             }
-        } else if (row.Year < 2000) {
-            if (row.Status === ' TS') {
-                stormTS1990.push(row.ID)
-            } else if (row.Status === ' TD') {
-                stormTD1990.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 96) {
-                stormC11990.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 111) {
-                stormC21990.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 131) {
-                stormC31990.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 156) {
-                stormC41990.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] >= 156) {
-                stormC51990.push(row.ID)
+        } else if (row.year < 2000) {
+            if (row.status === ' TS') {
+                stormTS1990.push(row.stormid)
+            } else if (row.status === ' TD') {
+                stormTD1990.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 96) {
+                stormC11990.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 111) {
+                stormC21990.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 131) {
+                stormC31990.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 156) {
+                stormC41990.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind >= 156) {
+                stormC51990.push(row.stormid)
             }
-        } else if (row.Year < 2010) {
-            if (row.Status === ' TS') {
-                stormTS2000.push(row.ID)
-            } else if (row.Status === ' TD') {
-                stormTD2000.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 96) {
-                stormC12000.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 111) {
-                stormC22000.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 131) {
-                stormC32000.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 156) {
-                stormC42000.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] >= 156) {
-                stormC52000.push(row.ID)
+        } else if (row.year < 2010) {
+            if (row.status === ' TS') {
+                stormTS2000.push(row.stormid)
+            } else if (row.status === ' TD') {
+                stormTD2000.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 96) {
+                stormC12000.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 111) {
+                stormC22000.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 131) {
+                stormC32000.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 156) {
+                stormC42000.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind >= 156) {
+                stormC52000.push(row.stormid)
             }
         } else {
-            if (row.Status === ' TS') {
-                stormTS2010.push(row.ID)
-            } else if (row.Status === ' TD') {
-                stormTD2010.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 96) {
-                stormC12010.push(row.ID)
-            } else if (row.Status === ' HU' && row["Maximum Wind"] < 111) {
-                stormC22010.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 131) {
-                stormC32010.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] < 156) {
-                stormC42010.push(row.ID)
-            }else if (row.Status === ' HU' && row["Maximum Wind"] >= 156) {
-                stormC52010.push(row.ID)
+            if (row.status === ' TS') {
+                stormTS2010.push(row.stormid)
+            } else if (row.status === ' TD') {
+                stormTD2010.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 96) {
+                stormC12010.push(row.stormid)
+            } else if (row.status === ' HU' && row.maxwind < 111) {
+                stormC22010.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 131) {
+                stormC32010.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind < 156) {
+                stormC42010.push(row.stormid)
+            }else if (row.status === ' HU' && row.maxwind >= 156) {
+                stormC52010.push(row.stormid)
             }
         }
 
         },
     );
-        console.log(stormTS1860);
+        console.log(stormTS1850);
         console.log(stormTD1850);
         console.log(stormC11850);
         console.log(stormC21850);
@@ -439,7 +452,7 @@ d3.json("/api/v1.0/maxwind", d3.autoType).then((data) => {
             align: 'left',
             verticalAlign: 'top',
             x: 80,
-            y: 10,
+            y: 30,
             floating: true,
             borderWidth: 1,
             backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
@@ -489,81 +502,81 @@ d3.json("/api/v1.0/maxwind", d3.autoType).then((data) => {
             }
         },
         series: [{
-            name: 'Tropical Depression',
+            name: 'Tropical Depression (Winds 38 mph or less)',
             data: [
                 {
-                    sequence: [stormTD1850.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormTD1850.length]
                 }, {
-                    sequence: [stormTD1860.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormTD1860.length]
                 }, {
-                    sequence: [stormTD1870.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTD1870.length]
                 }, {
-                    sequence: [stormTD1880.length1]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormTD1880.length1]
                 }, {
-                    sequence: [stormTD1890.length1]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormTD1890.length1]
                 }, {
-                    sequence: [stormTD1900.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormTD1900.length]
                 }, {
-                    sequence: [stormTD1910.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTD1910.length]
                 }, {
-                    sequence: [stormTD1920.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormTD1920.length]
                 }, {
-                    sequence: [stormTD1930.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTD1930.length]
                 }, {
-                    sequence: [stormTD1940.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormTD1940.length]
                 }, {
-                    sequence: [stormTD1950.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTD1950.length]
                 }, {
-                    sequence: [stormTD1960.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTD1960.length]
                 }, {
-                    sequence: [stormTD1970.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTD1970.length]
                 }, {
-                    sequence: [stormTD1980.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTD1980.length]
                 }, {
-                    sequence: [stormTD1990.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTD1990.length]
                 }, {
-                    sequence: [stormTD2000.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTD2000.length]
                 }, {
-                    sequence: [stormTD2010.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTD2010.length]
                 }
             ]
         }, {
-            name: 'Tropical Storm',
+            name: 'Tropical Storm (Winds 39-74 mph)',
             data: [
                 {
-                    sequence: [stormTS1850.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormTS1850.length]
                 }, {
-                    sequence: [stormTS1860.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormTS1860.length]
                 }, {
-                    sequence: [stormTS1870.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTS1870.length]
                 }, {
-                    sequence: [stormTS1880.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormTS1880.length]
                 }, {
-                    sequence: [stormTS1890.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormTS1890.length]
                 }, {
-                    sequence: [stormTS1900.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormTS1900.length]
                 }, {
-                    sequence: [stormTS1910.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTS1910.length]
                 }, {
-                    sequence: [stormTS1920.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormTS1920.length]
                 }, {
-                    sequence: [stormTS1930.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTS1930.length]
                 }, {
-                    sequence: [stormTS1940.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormTS1940.length]
                 }, {
-                    sequence: [stormTS1950.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTS1950.length]
                 }, {
-                    sequence: [stormTS1960.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTS1960.length]
                 }, {
-                    sequence: [stormTS1970.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTS1970.length]
                 }, {
-                    sequence: [stormTS1980.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTS1980.length]
                 }, {
-                    sequence: [stormTS1990.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTS1990.length]
                 }, {
-                    sequence: [stormTS2000.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTS2000.length]
                 }, {
-                    sequence: [stormTS2010.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormTS2010.length]
                 }
             ]
         }, {
