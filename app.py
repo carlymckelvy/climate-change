@@ -56,9 +56,13 @@ def welcome():
 
 # Landing page
 @app.route("/")
-def homepage():
+def index():
     return render_template("index.html")
 
+# Hurricanes page
+@app.route("/hurricanes")
+def hurricane():
+    return render_template("hurricanes.html")
 
 # Hurricane page
 @app.route("/api/v1.0/hurricanes")
@@ -163,8 +167,9 @@ def maxwind():
 
 
 # Oceans page
-# @app.route("/oceans")
-#     return render_template("oceans.html")
+@app.route("/oceans")
+def oceans():
+    return render_template("oceanTemps.html")
 
 @app.route("/api/v1.0/ocean_temps")
 def oceanData():
@@ -186,8 +191,9 @@ def oceanData():
     return jsonify(all_oceanData)
 
 # #Carbon dioxide page
-# @app.route("/co2")
-#       return render_template("co2.html")
+@app.route("/carbon")
+def carbon():
+      return render_template("Carbon.html")
 
 @app.route("/api/v1.0/meanco2")
 def co2Data():
