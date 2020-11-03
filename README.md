@@ -1,7 +1,5 @@
-# Group-Project-2
-Contributors:
 
-Justan, Karly, Kathy, Erin, and Elaine
+Justan, Carly, Kathy, Erin, and Elaine
 
 Project Description
 
@@ -13,9 +11,9 @@ Project Description
 
 Instructions to create website locally:
 
-1. Create a new virtual environment and install the requirements.txt file for packages required  
-    - requirements.txt should be in the directory where command will be executed or specify path
-    - use "pip install -r requirements.txt" command to install
+1. Create a new virtual environment and install the *requirements.txt* file for packages required  
+    - *requirements.txt* should be in the directory where command will be executed or specify path
+    - use `pip install -r requirements.txt` command to install
 
 2. An API key is required from Mapbox for your config.js. Format for config.js - 
 const API_KEY = "your access token". Edit the "configEDIT.js" file provided in the js folder with this information. (https://docs.mapbox.com/api/maps/)
@@ -24,7 +22,8 @@ const API_KEY = "your access token". Edit the "configEDIT.js" file provided in t
 
 4. Run the app.py file and have a localhost port open for the HTML to display 
 
-Theme - With increasing attention being given to climate change, an analysis of those potential relationships between ocean water temperature changes, carbon dioxide levels and changes over time of all the various categories of storms in the Atlantic Ocean provide an opportunity to frame the data visually. With data from NOAA (National Oceanic and Atmospheric Administration) going back to the 1850's for both ocean temperatures and storm/hurricane data, it provides a unique opportunity to explore such a surprisingly rich and thorough resource. The addition of the carbon dioxide readings starting in the 1950's further layers the assumptions of the effects of those changes on increasing climate variability. 
+
+Theme and Inspiration - With increasing attention being given to climate change, an analysis of those potential relationships between ocean water temperature changes, carbon dioxide levels and changes over time of all the various categories of storms in the Atlantic Ocean provide an opportunity to frame the data visually. With data from NOAA (National Oceanic and Atmospheric Administration) going back to the 1850's for both ocean temperatures and storm/hurricane data, it provides a unique opportunity to explore such a surprisingly rich and thorough resource. The addition of the carbon dioxide readings starting in the 1950's further layers the assumptions of the effects of those changes on increasing climate variability. 
 
 Data Munging - Various departments from NOAA provided the raw data, and 3 csv files were ultimately used as our source data from which we explored in our Jupyter Notebook. Our data wrangling ultimately involved creating six cleaned and reformatted dataframes that we then loaded into a sqlite database. Our Python Flask-powered API then created six API endpoints.
 
