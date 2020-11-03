@@ -1,18 +1,10 @@
-//d3.csv("../static/data/maxWind.csv", d3.autoType).then((data) => {
-//d3.json("/api/v1.0/maxwind").then((data) => {
 d3.json("/api/v1.0/maxwind").then(function(dataHurr) {
+    // Convert year and maxwind to numbers so can use for comparison
     dataHurr.forEach(data => {
         data.year = +data.year;
         data.maxwind = +data.maxwind;
     });
     console.log(dataHurr);
-
-// (data) => {
-//     console.log(data);
-//     data.maxwind = +data.maxwind;
-//     console.log(data);
- 
-//});
 
     // Create empty arrays to hold the storms that match its respective criteria
     var stormTS1850 = [];
@@ -152,7 +144,6 @@ d3.json("/api/v1.0/maxwind").then(function(dataHurr) {
     var stormC52010 = [];
 
     // Loop through each row to determine which array that storm should be added to
-    //var x_axis = data.map(row => {
     var x_axis = dataHurr.map(row => {
 
         if (row.year < 1860) {           
@@ -432,13 +423,6 @@ d3.json("/api/v1.0/maxwind").then(function(dataHurr) {
 
         },
     );
-        console.log(stormTS1850);
-        console.log(stormTD1850);
-        console.log(stormC11850);
-        console.log(stormC21850);
-        console.log(stormC31850);
-        console.log(stormC41850);
-        console.log(stormC51850);
 
     Highcharts.chart('windrace', {
         chart: {
@@ -583,78 +567,78 @@ d3.json("/api/v1.0/maxwind").then(function(dataHurr) {
             name: 'Category 1 Hurricane (Winds 75-95 mph)',
             data: [
                 {
-                    sequence: [stormC11850.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC11850.length]
                 }, {
-                    sequence: [stormC11860.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormC11860.length]
                 }, {
-                    sequence: [stormC11870.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC11870.length]
                 }, {
-                    sequence: [stormC11880.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC11880.length]
                 }, {
-                    sequence: [stormC11890.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC11890.length]
                 }, {
-                    sequence: [stormC11900.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormC11900.length]
                 }, {
-                    sequence: [stormC11910.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC11910.length]
                 }, {
-                    sequence: [stormC11920.length1]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC11920.length1]
                 }, {
-                    sequence: [stormC11930.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC11930.length]
                 }, {
-                    sequence: [stormC11940.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormC11940.length]
                 }, {
-                    sequence: [stormC11950.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC11950.length]
                 }, {
-                    sequence: [stormC11960.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC11960.length]
                 }, {
-                    sequence: [stormC11970.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC11970.length]
                 }, {
-                    sequence: [stormC11980.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC11980.length]
                 }, {
-                    sequence: [stormC11990.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC11990.length]
                 }, {
-                    sequence: [stormC12000.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC12000.length]
                 }, {
-                    sequence: [stormC12010.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC12010.length]
                 }
             ]
         }, {
             name: 'Category 2 Hurricane (Winds 96-110 mph)',
             data: [
                 {
-                    sequence: [stormC21850.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC21850.length]
                 }, {
-                    sequence: [stormC21860.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormC21860.length]
                 }, {
-                    sequence: [stormC21870.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC21870.length]
                 }, {
-                    sequence: [stormC21880.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC21880.length]
                 }, {
-                    sequence: [stormC21890.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC21890.length]
                 }, {
-                    sequence: [stormC21900.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormC21900.length]
                 }, {
-                    sequence: [stormC21910.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC21910.length]
                 }, {
-                    sequence: [stormC21920.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC21920.length]
                 }, {
-                    sequence: [stormC21930.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC21930.length]
                 }, {
-                    sequence: [stormC21940.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormC21940.length]
                 }, {
-                    sequence: [stormC21950.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC21950.length]
                 }, {
-                    sequence: [stormC21960.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC21960.length]
                 }, {
-                    sequence: [stormC21970.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC21970.length]
                 }, {
-                    sequence: [stormC21980.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC21980.length]
                 }, {
-                    sequence: [stormC21990.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC21990.length]
                 }, {
-                    sequence: [stormC22000.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC22000.length]
                 }, {
-                    sequence: [stormC22010.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC22010.length]
                 }
             ]
         },
@@ -662,39 +646,39 @@ d3.json("/api/v1.0/maxwind").then(function(dataHurr) {
             name: 'Category 3 Hurricane (Winds 111-130 mph)',
             data: [
                 {
-                    sequence: [stormC31850.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC31850.length]
                 }, {
-                    sequence: [stormC31860.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormC31860.length]
                 }, {
-                    sequence: [stormC31870.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC31870.length]
                 }, {
-                    sequence: [stormC31880.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC31880.length]
                 }, {
-                    sequence: [stormC31890.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC31890.length]
                 }, {
-                    sequence: [stormC31900.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormC31900.length]
                 }, {
-                    sequence: [stormC31910.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC31910.length]
                 }, {
-                    sequence: [stormC31920.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC31920.length]
                 }, {
-                    sequence: [stormC31930.length4]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC31930.length4]
                 }, {
-                    sequence: [stormC31940.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormC31940.length]
                 }, {
-                    sequence: [stormC31950.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC31950.length]
                 }, {
-                    sequence: [stormC31960.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC31960.length]
                 }, {
-                    sequence: [stormC31970.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC31970.length]
                 }, {
-                    sequence: [stormC31980.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC31980.length]
                 }, {
-                    sequence: [stormC31990.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC31990.length]
                 }, {
-                    sequence: [stormC32000.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC32000.length]
                 }, {
-                    sequence: [stormC32010.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC32010.length]
                 }
             ]
         },
@@ -702,39 +686,39 @@ d3.json("/api/v1.0/maxwind").then(function(dataHurr) {
             name: 'Category 4 Hurricane (Winds 131-155 mph)',
             data: [
                 {
-                    sequence: [stormC41850.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC41850.length]
                 }, {
-                    sequence: [stormC41860.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormC41860.length]
                 }, {
-                    sequence: [stormC41870.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC41870.length]
                 }, {
-                    sequence: [stormC41880.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC41880.length]
                 }, {
-                    sequence: [stormC41890.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC41890.length]
                 }, {
-                    sequence: [stormC41900.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC41900.length]
                 }, {
-                    sequence: [stormC41910.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormC41910.length]
                 }, {
-                    sequence: [stormC41920.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC41920.length]
                 }, {
-                    sequence: [stormC41930.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC41930.length]
                 }, {
-                    sequence: [stormC41940.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC41940.length]
                 }, {
-                    sequence: [stormC41950.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormC41950.length]
                 }, {
-                    sequence: [stormC41960.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC41960.length]
                 }, {
-                    sequence: [stormC41970.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC41970.length]
                 }, {
-                    sequence: [stormC41980.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC41980.length]
                 }, {
-                    sequence: [stormC41990.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC41990.length]
                 }, {
-                    sequence: [stormC42000.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC42000.length]
                 }, {
-                    sequence: [stormC42010.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC42010.length]
                 }
             ]
         },
@@ -742,42 +726,42 @@ d3.json("/api/v1.0/maxwind").then(function(dataHurr) {
             name: 'Category 5 Hurricane (Winds 156+ mph)',
             data: [
                 {
-                    sequence: [stormC51850.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC51850.length]
                 }, {
-                    sequence: [stormC51860.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormC51860.length]
                 }, {
-                    sequence: [stormC51870.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC51870.length]
                 }, {
-                    sequence: [stormC51880.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC51880.length]
                 }, {
-                    sequence: [stormC51890.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC51890.length]
                 }, {
-                    sequence: [stormC51900.length]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormC51900.length]
                 }, {
-                    sequence: [stormC51910.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC51910.length]
                 }, {
-                    sequence: [stormC51920.length]//, 5, 2, 7, 7, 1, 6, 9, 2, 5, 1]
+                    sequence: [stormC51920.length]
                 }, {
-                    sequence: [stormC51930.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC51930.length]
                 }, {
-                    sequence: [stormC51940.length9]//, 5, 7, 7, 3, 8, 9, 9, 1, 7, 3]
+                    sequence: [stormC51940.length9]
                 }, {
-                    sequence: [stormC51950.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC51950.length]
                 }, {
-                    sequence: [stormC51960.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC51960.length]
                 }, {
-                    sequence: [stormC51970.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC51970.length]
                 }, {
-                    sequence: [stormC51980.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC51980.length]
                 }, {
-                    sequence: [stormC51990.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC51990.length]
                 }, {
-                    sequence: [stormC52000.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC52000.length]
                 }, {
-                    sequence: [stormC52010.length]//, 1, 9, 3, 7, 4, 3, 8, 7, 1, 4]
+                    sequence: [stormC52010.length]
                 }
             ]
-        },
+        }
     ]
     });
 });
