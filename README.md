@@ -1,5 +1,5 @@
-### Group-Project-2
-# Evolution of Storms over Time in the Atlantic Ocean
+
+Justan, Carly, Kathy, Erin, and Elaine
 
 Project Description
 
@@ -15,15 +15,21 @@ Instructions to create website locally:
     - *requirements.txt* should be in the directory where command will be executed or specify path
     - use `pip install -r requirements.txt` command to install
 
-2. Run the *app.py file* and have a localhost port open for the HTML to display 
+2. An API key is required from Mapbox for your config.js. Format for config.js - 
+const API_KEY = "your access token". Edit the "configEDIT.js" file provided in the js folder with this information. (https://docs.mapbox.com/api/maps/)
+
+3. The hurricanes.sqlite database is a sqlite database that was created from running our Jupyter Notebook file. The database has already been created and the Jupyter Notebook does not need to be run again for the website to function.
+
+4. Run the app.py file and have a localhost port open for the HTML to display 
+
 
 Theme and Inspiration - With increasing attention being given to climate change, an analysis of those potential relationships between ocean water temperature changes, carbon dioxide levels and changes over time of all the various categories of storms in the Atlantic Ocean provide an opportunity to frame the data visually. With data from NOAA (National Oceanic and Atmospheric Administration) going back to the 1850's for both ocean temperatures and storm/hurricane data, it provides a unique opportunity to explore such a surprisingly rich and thorough resource. The addition of the carbon dioxide readings starting in the 1950's further layers the assumptions of the effects of those changes on increasing climate variability. 
 
 Data Munging - Various departments from NOAA provided the raw data, and 3 csv files were ultimately used as our source data from which we explored in our Jupyter Notebook. Our data wrangling ultimately involved creating six cleaned and reformatted dataframes that we then loaded into a sqlite database. Our Python Flask-powered API then created six API endpoints.
 
-Coding Approach - NEED SOME INSPIRATION!!!
+Coding Approach - Javascript was used for our visuals. Made use of Leaflet/Mapbox, Plotly and the Highcharts libraries. Python used for Jupyter Notebook and Flask-powered API.
 
-Visualizations - actual visuals and text
+Visualizations - Actual visuals and text
 
 Carbon Data - Background (from NOAA website//https://www.esrl.noaa.gov/gmd/ccgg/trends/mlo.html)
 
@@ -61,13 +67,21 @@ Storms - Background - (from website //https://350.org/science/)
 
     The storms, cyclones, hurricanes and typhoons we see today are bringing noticeably heavier rainfall, causing more flooding, blowing with stronger winds and causing bigger storm surges.
 
-    WE DON'T HAVE 2016 DATA FOR STORMS - CONTEXT!!!
+    WE DON'T HAVE 2016 DATA FOR STORMS - BUT SOME CONTEXT!!!
+
     The unusually warm waters (attributable to global warming) in the Caribbean in September, 2016 lead to the incredibly rapid intensification of Hurricane Matthew, consistent with the trend of rapidly intensifying tropical hurricanes. In just 36 hours Hurricane Matthew went from a tropical storm to a Category 5 hurricane, causing havoc in Haiti, Cuba, the Bahamas and the Southeastern United States as it progressed.
 
     From website: https://climate.nasa.gov/news/2837/warming-seas-may-increase-frequency-of-extreme-storms/#:~:text=They%20also%20found%20that%2C%20based,increase%20in%20a%20warmer%20environment.
 
     They found that extreme storms - those producing at least 0.12 inches (3 millimeters) of rain per hour over a 16-mile (25-kilometer) area - formed when the sea surface temperature was higher than about 82 degrees Fahrenheit (28 degrees Celsius). They also found that, based on the data, 21 percent more storms form for every 1.8 degrees Fahrenheit (1 degree Celsius) that ocean surface temperatures rise.
 
+    Initial Proposal:
+
+    ● A brief articulation of your chosen topic and rationale We are analyzing the tropical storm/hurricane data over time such as strength of storms, number of hurricanes, and areas they are appearing. Also, looking at average water temperatures.
+    
+    ● A link to your data set(s) and a screenshot of the metadata if it exists.Ocean Temps - https://www.ncdc.noaa.gov/cag/global/time-seriesHurricanes/Tropical Storms – https://www.kaggle.com/noaa/hurricane-database
+    
+    ● 3 or 4 screenshots of relevant, “inspiring” visualizations that frame your creative fodder
 
 
 
