@@ -50,7 +50,8 @@ def welcome():
         f"<a href='/api/v1.0/landfall'>landfall</a><br/>"
         f"<a href='/api/v1.0/meanco2'>meanco2</a><br/>"
         f"<a href='/api/v1.0/ocean_temps'>ocean_temps</a><br/>"
-        f"<a href='/api/v1.0/maxwind'>maxwind</a>"
+        f"<a href='/api/v1.0/maxwind'>maxwind</a><br/>"
+        f"<a href='/'>home</a>"
     )
 
 
